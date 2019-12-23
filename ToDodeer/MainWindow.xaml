@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="166*"/>
+            <ColumnDefinition Width="460*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid SelectedCellsChanged="NoticeChanged" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Name="noticesDataGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Notes" Binding="{Binding Name}" Width="20*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid SelectedCellsChanged="PointChanged" CanUserAddRows="False"  Visibility="Visible" Grid.Column="1" SelectionMode="Single" AutoGenerateColumns="False" Name="pointsDataGrid">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Points" Binding="{Binding Content.Text}" Width="20*"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        <TextBox x:Name="contentTextBox"   Visibility="Visible"  Text="Let's say tommorow to TOMMOROW word . . ." Grid.Column="2" Height="120" Width="340" FontSize="14"/>
+        <Button x:Name="newPointButton"  Visibility="Visible"  Height="30" Width="125" Click="CreatePoint" Grid.Row="1" Grid.Column="1" Content="Add point" />
+        <Button x:Name="saveButton"  Visibility="Visible"  Height="30" Width="125"  Click="SaveContent" Grid.Column="2" Margin="220,180,0,0" Content="Save"/>
+        <Button x:Name="newNoteButton" Click="CreateNote" Height="30" Width="125" Grid.Row="1" Content="Add note"/>
+        <Button x:Name="refresh" Content="Refresh" Click="Refresh"  Height="20" Width="120" Grid.Row="1" Margin="0,120,0,0"></Button>
+        <Frame x:Name="mainFrame" Grid.Column="2" Grid.Row="1" Visibility="Visible">
+
+        </Frame>
     </Grid>
 </Window>

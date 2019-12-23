@@ -1,0 +1,17 @@
+﻿<Page x:Class="ToDodeer.NewNotice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToDodeer"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="240" d:DesignWidth="600"
+      Title="NewNotice">
+
+    <Grid>
+        <TextBlock Text="Enter name of new notice" Margin="0,0,200,120" Height="40" Width="240" TextAlignment="Center" FontSize="20"/>
+        <Button x:Name="save" Content="Save" Click="Save" Height="32" Margin="260,0,0,0" Width="120"/>
+        <TextBox x:Name="noteName" Height="60" Width="240" Margin="0,0,200,0"></TextBox>
+    </Grid>
+</Page>
